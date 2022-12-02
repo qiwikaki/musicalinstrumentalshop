@@ -101,7 +101,7 @@ public class Client {
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
                 ", age=" + age +
-                '}';
+                '}' + "\r\n";
     }
 
     public static void main(String[] args) {
