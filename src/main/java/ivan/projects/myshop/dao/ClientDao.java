@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ClientDao implements Dao {
+public class  ClientDao implements DaoClient {
 
     private static int AUKey;
     static Connection con = DatabaseConnection.getConnection();
@@ -38,6 +38,7 @@ public class ClientDao implements Dao {
                 people.add(client);
             }
         } catch (SQLException e) {
+            System.err.println("admin_data not found in database");
             throw new RuntimeException(e);
         }
         try {
@@ -67,7 +68,7 @@ public class ClientDao implements Dao {
             ps.setInt(7, client.getAge());
 
             ps.executeUpdate();
-            System.out.println("Create access");
+            System.out.println("Create access client");
 
         } catch (SQLException e) {
             System.err.println("Not create");
@@ -140,16 +141,19 @@ public class ClientDao implements Dao {
 
         ClientDao clientDao = new ClientDao();
 
-
-        //CREATE
-//        clientDao.addClient(new Client(AUKey, "Tor","Odinson","molot@.ru","4444",
-//                "-","Asgard", 5000));
+//        CREATE
+//        clientDao.addClient(new Client(AUKey, "Sezha",
+//                "Polovtsev","daun@","1234",
+//                "88005553535","bugri", 42));
 
         //DELETE
-//            clientDao.deleteClient(10);
+//            clientDao.deleteClient(9);
 
-        Client clientTest = clientDao.finderById(3);
-        System.out.println(clientTest);
+        //UPDATE
+//        Client clientTest = clientDao.finderById(6);
+//        clientTest.setAddress("murmansk");
+//        clientDao.updateClient(clientTest);
+//        System.out.println(clientTest);
 
         //READ
 //        System.out.println(clientDao.getAllClients());

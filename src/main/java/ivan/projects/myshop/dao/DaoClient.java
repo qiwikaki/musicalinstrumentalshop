@@ -5,9 +5,8 @@ import ivan.projects.myshop.entity.Client;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface Dao {
+public interface DaoClient {
 
-    //clientDao
     List<Client> getAllClients() throws SQLException;
 
      void addClient(Client client) throws SQLException;
