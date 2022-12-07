@@ -37,7 +37,6 @@ public class ClientDaoImpl implements ClientDao {
 
                 people.add(client);
             }
-            stmt.close();
         } catch (SQLException e) {
             System.err.println("client_data not found in database");
             throw new RuntimeException(e);
@@ -129,6 +128,7 @@ public class ClientDaoImpl implements ClientDao {
 
     @Override
     public void update(Client client) {
+
         String query = "UPDATE public.client_data SET phone = ?, address = ? where id = ?";
 
         try {
@@ -156,7 +156,7 @@ public class ClientDaoImpl implements ClientDao {
 //            clientDaoImpl.deleteEntityById(16L);
 
 //        UPDATE
-//        Client clientTest = clientDaoImpl.findEntityById(1L);
+        Client clientTest = clientDaoImpl.findEntityById(1L);
 //        clientTest.setAddress("Zapolyarniy");
 //        clientDaoImpl.update(clientTest);
 //        System.out.println(clientTest);
