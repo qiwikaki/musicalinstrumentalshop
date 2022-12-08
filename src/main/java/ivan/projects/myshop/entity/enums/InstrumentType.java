@@ -1,4 +1,4 @@
-package ivan.projects.myshop.entity;
+package ivan.projects.myshop.entity.enums;
 
 public enum InstrumentType {
 

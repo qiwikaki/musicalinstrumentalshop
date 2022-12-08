@@ -1,18 +1,16 @@
 package ivan.projects.myshop.dao;
 
-import ivan.projects.myshop.entity.Client;
 import ivan.projects.myshop.entity.Instrument;
-import ivan.projects.myshop.entity.InstrumentType;
+import ivan.projects.myshop.entity.enums.InstrumentType;
 import ivan.projects.myshop.util.DatabaseConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InstrumentDaoImpl implements InstrumentDao{
+public class InstrumentDaoImpl implements InstrumentDao {
 
-    static Connection con = DatabaseConnection.getConnection();
-
+   private static final Connection con = DatabaseConnection.getConnection();
     private static int AUKey;
 
     @Override
@@ -144,20 +142,23 @@ public class InstrumentDaoImpl implements InstrumentDao{
 
 
 //        Instrument yamahaGuitar = new Instrument(4, InstrumentType.GUITAR, "Yamaha", "F310" ,13990);
+
 //        System.out.println(yamahaGuitar.getInstrumentType().getInstrumentTypeString());
 
+//        CREATE
 //        instrumentDaoImpl.createEntity(new Instrument(AUKey, InstrumentType.GUITAR, "Yamaha",
 //                "FS820 BL", 39_990));
 
+//        DELETE
 //        instrumentDaoImpl.deleteEntityById(7L);
 
-//        System.out.println(instrumentDaoImpl.findAll());
+//        READ
+        System.out.println(instrumentDaoImpl.findAll());
 
+//        UPDATE
 //        Instrument ins = instrumentDaoImpl.findEntityById(5L);
 //        ins.setPrice(39_995);
 //        instrumentDaoImpl.update(ins);
-
-        System.out.println(instrumentDaoImpl.findEntityById(5L));
 
     }
 

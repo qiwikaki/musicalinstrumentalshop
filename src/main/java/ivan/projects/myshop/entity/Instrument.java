@@ -1,5 +1,7 @@
 package ivan.projects.myshop.entity;
 
+import ivan.projects.myshop.entity.enums.InstrumentType;
+
 public class Instrument {
 
     private int id;

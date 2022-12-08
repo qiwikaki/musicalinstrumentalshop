@@ -11,7 +11,7 @@ import java.util.List;
 public class ClientDaoImpl implements ClientDao {
 
     private static int AUKey;
-    static Connection con = DatabaseConnection.getConnection();
+   private static final Connection con = DatabaseConnection.getConnection();
 
     @Override
     public List<Client> findAll() {
@@ -153,10 +153,10 @@ public class ClientDaoImpl implements ClientDao {
 //                "xxx","England", 47));
 
         //DELETE
-//            clientDaoImpl.deleteEntityById(16L);
+//            clientDaoImpl.deleteEntityById(1L);
 
 //        UPDATE
-        Client clientTest = clientDaoImpl.findEntityById(1L);
+//        Client clientTest = clientDaoImpl.findEntityById(1L);
 //        clientTest.setAddress("Zapolyarniy");
 //        clientDaoImpl.update(clientTest);
 //        System.out.println(clientTest);
