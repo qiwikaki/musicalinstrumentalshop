@@ -1,37 +1,97 @@
 package ivan.projects.myshop.entity;
 
+import ivan.projects.myshop.dao.ClientDaoImpl;
+import ivan.projects.myshop.dao.InstrumentDaoImpl;
+import ivan.projects.myshop.entity.enums.OrderStatusType;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public class Order {
 
-    private Client client;
-    private Instrument instrument;
+    private int id;
+    private LocalDateTime localDateTime;
 
+
+    private int idClient;
+    private int idInstrument;
+    private OrderStatusType orderStatusType;
+
+    public Order() {
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getLocalDateTime() {
+        return localDateTime;
+    }
+
+    public void setLocalDateTime(LocalDateTime localDateTime) {
+        this.localDateTime = localDateTime;
+    }
+
+    public int getIdClient() {
+        return idClient;
+    }
+
+    public void setIdClient(int idClient) {
+        this.idClient = idClient;
+    }
+
+    public int getIdInstrument() {
+        return idInstrument;
+    }
+
+    public void setIdInstrument(int idInstrument) {
+        this.idInstrument = idInstrument;
+    }
+
+    public OrderStatusType getOrderStatusType() {
+        return orderStatusType;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", localDateTime=" + localDateTime +
+                ", idClient=" + idClient +
+                ", idInstrument=" + idInstrument +
+                ", orderStatusType=" + orderStatusType +
+                '}' + "\r\n";
+    }
+
+    public void setOrderStatusType(OrderStatusType orderStatusType) {
+        this.orderStatusType = orderStatusType;
+    }
+
+    public Order(int id, LocalDateTime localDateTime, int idClient, int idInstrument, OrderStatusType orderStatusType) {
+        this.id = id;
+        this.localDateTime = localDateTime;
+        this.idClient = idClient;
+        this.idInstrument = idInstrument;
+        this.orderStatusType = orderStatusType;
+    }
+
+    public static void main(String[] args) {
+
+        ClientDaoImpl clientDao = new ClientDaoImpl();
+        InstrumentDaoImpl instrumentDaoImpl = new InstrumentDaoImpl();
+
+        LocalDateTime localDateTime = LocalDateTime.now();
+        System.out.println(localDateTime);
+
+//        Order order = new Order(1, , clientDao.findEntityById(8L).getId(),
+//                instrumentDaoImpl.findEntityById(4L).getId() ,OrderStatusType.isProcessing);
+//        System.out.println(order);
+
+    }
 
 }
-//-- Table: public.order_data
-//
-//        -- DROP TABLE IF EXISTS public.order_data;
-//
-//        CREATE TABLE IF NOT EXISTS public.order_data
-//        (
-//        id bigint NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 9223372036854775807 CACHE 1 ),
-//        order_date timestamp with time zone,
-//        client_id bigint NOT NULL,
-//        instrument_id bigint NOT NULL,
-//        status numeric NOT NULL,
-//        CONSTRAINT order_pkey PRIMARY KEY (id),
-//        CONSTRAINT client_fkey FOREIGN KEY (client_id)
-//        REFERENCES public.client_data (id) MATCH SIMPLE
-//        ON UPDATE NO ACTION
-//        ON DELETE NO ACTION
-//        NOT VALID,
-//        CONSTRAINT instrument_fkey FOREIGN KEY (instrument_id)
-//        REFERENCES public.instrument_data (id) MATCH SIMPLE
-//        ON UPDATE NO ACTION
-//        ON DELETE NO ACTION
-//        NOT VALID
-//        )
-//
-//        TABLESPACE pg_default;
-//
-//        ALTER TABLE IF EXISTS public.order_data
-//        OWNER to postgres;

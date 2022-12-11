@@ -18,11 +18,6 @@ public final class DatabaseConnection {
     //Инициализация jdbc (делать синглтон?)
     static {
         try {
-            Class.forName("org.postgresql.Driver");
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        try {
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             DatabaseMetaData dma = connection.getMetaData();
             System.out.println("Connected to " + dma.getURL());

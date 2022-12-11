@@ -146,11 +146,11 @@ public class InstrumentDaoImpl implements InstrumentDao {
 //        System.out.println(yamahaGuitar.getInstrumentType().getInstrumentTypeString());
 
 //        CREATE
-//        instrumentDaoImpl.createEntity(new Instrument(AUKey, InstrumentType.GUITAR, "Yamaha",
-//                "FS820 BL", 39_990));
+//        instrumentDaoImpl.createEntity(new Instrument(AUKey, InstrumentType.DRUM,
+//                "Brahner", "MD-120/MRD" ,32874));
 
 //        DELETE
-//        instrumentDaoImpl.deleteEntityById(7L);
+//        instrumentDaoImpl.deleteEntityById(5L);
 
 //        READ
         System.out.println(instrumentDaoImpl.findAll());

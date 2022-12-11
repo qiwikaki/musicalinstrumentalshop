@@ -41,12 +41,6 @@ public class ClientDaoImpl implements ClientDao {
             System.err.println("client_data not found in database");
             throw new RuntimeException(e);
         }
-        try {
-            con.close();
-        } catch (SQLException e) {
-            System.err.println("Can't close!");
-            throw new RuntimeException(e);
-        }
         return people;
     }
 
@@ -153,7 +147,7 @@ public class ClientDaoImpl implements ClientDao {
 //                "xxx","England", 47));
 
         //DELETE
-//            clientDaoImpl.deleteEntityById(1L);
+            clientDaoImpl.deleteEntityById(6L);
 
 //        UPDATE
 //        Client clientTest = clientDaoImpl.findEntityById(1L);
