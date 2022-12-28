@@ -114,7 +114,7 @@ public class ClientDaoImpl implements ClientDao {
             client.setAge(rs.getInt("age"));
 
         } catch (SQLException e) {
-            System.err.println(id +" not create");
+            System.err.println("Client with: " + id +" not create");
             throw new RuntimeException(e);
         }
         return client;
@@ -147,7 +147,7 @@ public class ClientDaoImpl implements ClientDao {
 //                "xxx","England", 47));
 
         //DELETE
-            clientDaoImpl.deleteEntityById(6L);
+//            clientDaoImpl.deleteEntityById(6L);
 
 //        UPDATE
 //        Client clientTest = clientDaoImpl.findEntityById(1L);
@@ -156,7 +156,7 @@ public class ClientDaoImpl implements ClientDao {
 //        System.out.println(clientTest);
 
         //READ
-        System.out.println(clientDaoImpl.findAll());
+//        System.out.println(clientDaoImpl.findAll());
 
 //        Client clientTest = clientDaoImpl.findEntityById(1L);
 //        System.out.println(clientTest);

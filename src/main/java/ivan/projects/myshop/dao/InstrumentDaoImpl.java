@@ -129,7 +129,7 @@ public class InstrumentDaoImpl implements InstrumentDao {
             instrument.setPrice(rs.getInt("price"));
 
         } catch (SQLException e) {
-            System.err.println(id +" not create");
+            System.err.println("Instrument with: " + id +" not create");
             throw new RuntimeException(e);
         }
         return instrument;

@@ -126,7 +126,7 @@ public class OrderDaoImpl implements OrderDao{
             order.setOrderStatusType(OrderStatusType.valueOf(rs.getString("status")));
 
         } catch (SQLException e) {
-            System.err.println(id +" not create");
+            System.err.println("Order with: " + id +" not create");
             throw new RuntimeException(e);
         }
         return order;
@@ -137,14 +137,14 @@ public class OrderDaoImpl implements OrderDao{
         OrderDaoImpl orderDaoImpl = new OrderDaoImpl();
 
 
-//        orderDaoImpl.createEntity(new Order(AUKey,  LocalDateTime.now(),
-//                10, 6, OrderStatusType.isPayment));
+        orderDaoImpl.createEntity(new Order(AUKey,  LocalDateTime.now(),
+                19, 4, OrderStatusType.isProcessing));
 
 //        orderDaoImpl.deleteEntityById(7L);
 
 //        orderDaoImpl.findEntityById(8L);
 
-        System.out.println(orderDaoImpl.findAll());
+//        System.out.println(orderDaoImpl.findAll());
 
 //        Order orderTest = orderDaoImpl.findEntityById(8L);
 //        orderTest.setOrderStatusType(OrderStatusType.isDelivered);
